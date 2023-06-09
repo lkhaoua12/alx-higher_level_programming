@@ -6,4 +6,3 @@ if __name__ == "__main__":
     for i in range(1, args_num):
         result += int(argv[i])
     print("{:d}".format(result))
-    

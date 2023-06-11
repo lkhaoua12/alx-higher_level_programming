@@ -5,4 +5,4 @@ def element_at(my_list, idx):
         return
     for i in range(0, len(my_list)):
         if i == idx:
-            return i
+            return my_list[i]

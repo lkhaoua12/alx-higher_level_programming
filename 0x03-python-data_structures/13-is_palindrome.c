@@ -1,4 +1,3 @@
-
 #include "lists.h"
 #include <stdlib.h>
 
@@ -20,22 +19,52 @@ listint_t *reverseLinkedList(listint_t *head)
 
 int is_palindrome(listint_t **head)
 {
+        listint_t *slow = *head;
+        listint_t *fast = *head;
+        listint_t *prev_slow = *head;
+        listint_t *second_half = NULL;
         int is_palindrome = 1;
-        listint_t *current = *head;
-        listint_t *reversed = reverseLinkedList(*head);
 
-        while (current != NULL)
+        if (*head != NULL && (*head)->next != NULL)
         {
-                if (current->n != reversed->n)
+                while (fast != NULL && fast->next != NULL)
                 {
-                        is_palindrome = 0;
-                        break;
+                        fast = fast->next->next;
+                        prev_slow = slow;
+                        slow = slow->next;
                 }
-                current = current->next;
-                reversed = reversed->next;
-        }
 
-        reverseLinkedList(reversed);
+                if (fast != NULL)
+                {
+                        slow = slow->next;
+                }
+
+                second_half = reverseLinkedList(slow);
+
+                while (second_half != NULL)
+                {
+                        if ((*head)->n != second_half->n)
+                        {
+                                is_palindrome = 0;
+                                break;
+                        }
+
+                        *head = (*head)->next;
+                        second_half = second_half->next;
+                }
+
+                reverseLinkedList(slow);
+
+                if (fast != NULL) 
+                {
+                        prev_slow->next = slow;
+                        slow->next = second_half;
+                }
+                else
+                {
+                        prev_slow->next = second_half;
+                }
+        }
 
         return is_palindrome;
 }

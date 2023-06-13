@@ -19,16 +19,19 @@ listint_t *reverseLinkedList(listint_t *head)
 
 int is_palindrome(listint_t **head)
 {
-        if (*head == NULL || (*head)->next == NULL)
-        {
-                return 1;
-        }
-
         listint_t *slow = *head;
         listint_t *fast = *head;
         /* listint_t *prev_slow = *head; */
         listint_t *second_half = NULL;
         int is_palindrome = 1;
+        listint_t *temp1 = *head;
+        listint_t *temp2;
+
+        if (*head == NULL || (*head)->next == NULL)
+        {
+                return 1;
+        }
+
 
         while (fast != NULL && fast->next != NULL)
         {
@@ -43,10 +46,7 @@ int is_palindrome(listint_t **head)
         }
 
         second_half = reverseLinkedList(slow);
-
-        listint_t *temp1 = *head;
-        listint_t *temp2 = second_half;
-
+	temp2 = second_half;
         while (temp1 != NULL && temp2 != NULL)
         {
                 if (temp1->n != temp2->n)

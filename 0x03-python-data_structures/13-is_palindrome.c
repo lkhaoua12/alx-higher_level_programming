@@ -1,18 +1,22 @@
 #include "lists.h"
 #include <stdlib.h>
 
-listint_t* reverseLinkedList(listint_t* head);
-listint_t* createNode(int data);
-listint_t* cloneLinkedList(listint_t* head);
-listint_t* reverseLinkedList(listint_t* head);
+listint_t* reverseLinkedList();
+listint_t* createNode();
+listint_t* cloneLinkedList();
+listint_t* reverseLinkedList();
 
 int is_palindrome(listint_t** head)
 {
         int is_palindrome = 1;
-        listint_t* new_list = cloneLinkedList(*head);
+        listint_t* new_list;
+        listint_t* current;
+        listint_t* new_current;
+
+        new_list = cloneLinkedList(*head);
         new_list = reverseLinkedList(new_list);
-        listint_t* current = *head;
-        listint_t* new_current = new_list;
+        current = *head;
+        new_current = new_list;
 
         while (current != NULL)
         {
@@ -39,27 +43,23 @@ listint_t* createNode(int data)
 
 listint_t* cloneLinkedList(listint_t* head)
 {
+        listint_t* clonedHead;
+        listint_t* current;
+        listint_t* clonedCurrent;
+
         if (head == NULL)
         {
                 return NULL;
         }
 
-        /* Create a new head node */
-        listint_t* clonedHead = createNode(head->n);
-
-        /* Keep track of the current nodes in both lists */
-        listint_t* current = head->next;
-        listint_t* clonedCurrent = clonedHead;
+        clonedHead = createNode(head->n);
+        current = head->next;
+        clonedCurrent = clonedHead;
 
         while (current != NULL)
         {
-                /* Create a new node with the same data */
                 listint_t* newNode = createNode(current->n);
-
-                /* Set the next pointer of the cloned node */
                 clonedCurrent->next = newNode;
-
-                /* Move to the next nodes in both lists */
                 current = current->next;
                 clonedCurrent = clonedCurrent->next;
         }

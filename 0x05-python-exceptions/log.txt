@@ -1,1 +1,2 @@
-Unknown format code 'd' for object of type 'str'
+Exception: division by zero
+Exception: list index out of range

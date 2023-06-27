@@ -4,10 +4,10 @@ import sys
 
 def safe_print_integer_err(value):
     try:
-        print("{:d}".format(value))
+        sys.stdout.write("{:d}\n".format(value))
         return True
-    except Exception as ve:
-        print(ve, file=sys.stderr)
+    except Exception as e:
+        sys.stderr.write("Exception: {}\n".format(e))
         return False
 
 

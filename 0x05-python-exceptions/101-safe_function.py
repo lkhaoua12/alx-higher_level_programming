@@ -1,13 +1,16 @@
 #!/usr/bin/python3
 import sys
 
+
 def safe_function(fct, *args):
     try:
         result = fct(*args)
         print(result)
+        return result
     except Exception as e:
         print("Exception: ", end="", file=sys.stderr)
         print(e, file=sys.stderr)
+
 
 if __name__ == "__main__":
     def my_div(a, b):
@@ -15,10 +18,8 @@ if __name__ == "__main__":
 
     result = safe_function(my_div, 10, 2)
     print("result of my_div: {}".format(result))
-
     result = safe_function(my_div, 10, 0)
     print("result of my_div: {}".format(result))
-
 
     def print_list(my_list, len):
         i = 0

@@ -3,14 +3,12 @@ import sys
 
 
 def safe_print_integer_err(value):
-    boal = True
     try:
         print("{:d}".format(value))
+        return True
     except ValueError as ve:
         print(ve, file=sys.stderr)
-        boal = False
-
-    return boal
+        return False
 
 
 if __name__ == "__main__":

@@ -6,10 +6,10 @@ def safe_function(fct, *args):
     try:
         result = fct(*args)
         print(result)
-        return result
     except Exception as e:
         print("Exception: ", end="", file=sys.stderr)
         print(e, file=sys.stderr)
+    return result
 
 
 if __name__ == "__main__":

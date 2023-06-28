@@ -5,7 +5,6 @@ import sys
 def safe_function(fct, *args):
     try:
         result = fct(*args)
-        print(result)
         return result
     except Exception as e:
         print("Exception: ", end="", file=sys.stderr)

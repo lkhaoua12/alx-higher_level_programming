@@ -3,15 +3,14 @@ import sys
 
 
 def safe_function(fct, *args):
-    result = 0
     try:
         result = fct(*args)
         print(result)
+        return result
     except Exception as e:
-        result = None
         print("Exception: ", end="", file=sys.stderr)
         print(e, file=sys.stderr)
-    return result
+        return None
 
 
 if __name__ == "__main__":

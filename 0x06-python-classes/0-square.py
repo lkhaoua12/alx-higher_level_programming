@@ -2,6 +2,8 @@
 """
 this moduale difine a simple class.
 """
+
+
 class Square:
     """
     A class representing a square.

@@ -1,8 +1,14 @@
 #!/usr/bin/python3
+
 class Square:
     """
-    a class definging a square.
-    Attributse: None.
-    Methodes: None
+    A class representing a square.
+
+    Attributes:
+        None
+
+    Methods:
+        None
     """
+
     pass

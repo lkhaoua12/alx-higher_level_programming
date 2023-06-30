@@ -2,6 +2,8 @@
 """
 define square with size attribute
 """
+
+
 class Square:
     """
     Square: a calss that define a squre

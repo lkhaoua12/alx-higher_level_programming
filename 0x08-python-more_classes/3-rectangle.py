@@ -50,6 +50,6 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         rec_str = ""
-        for i in rangle (self.__height):
+        for i in rangle(self.__height):
             rec_str += "#" * self.__width + "\n"
         return rec_str

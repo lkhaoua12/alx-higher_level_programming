@@ -7,21 +7,24 @@ Using ``add_integer``
 Importing function from the module:
     >>> add_integer = __import__('0-add_integer').add_integer
 
-Adding 2 and 1
-    >>> add_integer(2, 1)
+Adding 1 and 2
+    >>> add_integer(1, 2)
     3
 
-Subtracting 20 and 2
-    >>> add_integer(20, -2)
-    18
+Subtracting 100 and 2
+    >>> add_integer(100, -2)
+    98
 
-Adding 15.4 and 15
-    >>> add_integer(15.4, 15)
-    30
+Adding 2.1 and 98
+    >>> add_integer(2.1)
+    100
 
+Subtracting 100.3 and 2
+	    >>> add_integer(100.3, -2)
+	    98
 
 Adding an integer number and a string
-    >>> add_integer(1, "world")
+    >>> add_integer(4, "School")
     Traceback (most recent call last):
 	      ...
     TypeError: b must be an integer
@@ -33,13 +36,13 @@ Passing None
     TypeError: a must be an integer
 
 Adding a letter and a number
-    >>> add_integer('a', 1)
+    >>> add_integer('1', 1)
     Traceback (most recent call last):
               ...
     TypeError: a must be an integer
 
 Adding two letters
-    >>> add_integer('a', 'b')
+    >>> add_integer('2', '1')
     Traceback (most recent call last):
               ...
     TypeError: a must be an integer
@@ -66,24 +69,9 @@ Adding two float numbers
     >>> add_integer(2.9, 2.9)
     4
 
-Adding a number and a string
-	>>> add_integer(1, "2")
-	Traceback (most recent call last):
-    		...
-	TypeError: b must be an integer
-
-Passing None
-    >>> add_integer(None)
-    Traceback (most recent call last):
-	      ...
-    TypeError: a must be an integer
-
-Missing arguments
-	>>> add_integer()
-	Traceback (most recent call last):
-    		...
-	TypeError: add_integer() missing 1 required positional argument: 'a'
-
+Subtracting 98 and 1
+    >>> add_integer(-1)
+    97
 
 Case Overflow:
 

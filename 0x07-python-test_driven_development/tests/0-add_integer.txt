@@ -66,6 +66,12 @@ Adding two float numbers
     >>> add_integer(2.9, 2.9)
     4
 
+Adding a number and a string
+	>>> add_integer(1, "2")
+	Traceback (most recent call last):
+    		...
+	TypeError: b must be an integer
+
 Missing arguments
 	>>> add_integer()
 	Traceback (most recent call last):

@@ -11,17 +11,17 @@ Adding 1 and 2
     >>> add_integer(1, 2)
     3
 
-Subtracting 100 and 2
-    >>> add_integer(100, -2)
-    98
+Subtracting 14 and 4
+    >>> add_integer(14, -4)
+    10
 
 Adding 2.1 and 98
     >>> add_integer(2.1)
     100
 
-Subtracting 100.3 and 2
-	    >>> add_integer(100.3, -2)
-	    98
+Subtracting 55.4 and 5
+	    >>> add_integer(55.4, -5)
+	    50
 
 Adding an integer number and a string
     >>> add_integer(4, "School")
@@ -36,13 +36,13 @@ Passing None
     TypeError: a must be an integer
 
 Adding a letter and a number
-    >>> add_integer('1', 1)
+    >>> add_integer('c', 1)
     Traceback (most recent call last):
               ...
     TypeError: a must be an integer
 
 Adding two letters
-    >>> add_integer('2', '1')
+    >>> add_integer('a', 'b')
     Traceback (most recent call last):
               ...
     TypeError: a must be an integer
@@ -54,20 +54,20 @@ Adding a tuple
     TypeError: a must be an integer
 
 Adding a number and a list
-    >>> add_integer(123, [])
+    >>> add_integer(1, [])
     Traceback (most recent call last):
 	      ...
     TypeError: b must be an integer
 
 Passing a string
-    >>> add_integer("Hello")
+    >>> add_integer("Schol")
     Traceback (most recent call last):
 	      ...
     TypeError: a must be an integer
 
 Adding two float numbers
-    >>> add_integer(2.9, 2.9)
-    4
+    >>> add_integer(4.5, 2.3)
+    6
 
 Subtracting 98 and 1
     >>> add_integer(-1)

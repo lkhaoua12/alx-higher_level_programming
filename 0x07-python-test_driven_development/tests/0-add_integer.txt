@@ -66,6 +66,13 @@ Adding two float numbers
     >>> add_integer(2.9, 2.9)
     4
 
+Missing arguments
+	>>> add_integer()
+	Traceback (most recent call last):
+    		...
+	TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
+
+
 Case Overflow:
 
     >>> add_integer(float('inf'), 0)

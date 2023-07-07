@@ -1,0 +1,22 @@
+for file 3-say_my_name.txt
+-----------------------------
+using ``say_my_name``
+--------------------------------
+import function from module
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+>>> say_my_name("Mehdi", "Lkhaoua")
+My name is Mehdi Lkhaoua
+
+>>> say_my_name("Mehdi")
+My name is Mehdi 
+
+>>> say_my_name(12, "Lkhaoua")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+>>> say_my_name("Mehdi", 5)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string

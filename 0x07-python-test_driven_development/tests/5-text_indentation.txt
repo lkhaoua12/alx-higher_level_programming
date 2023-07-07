@@ -1,0 +1,12 @@
+test file for the text_identation module
+------------------------------------------
+using ``text_indentation``
+----------------------------------------------
+import text_identation
+>>> text_identation = __import__("5-text_indentation").text_indentation
+
+test case: simple arge
+>>> text_identation("hello ?world")
+hello ?
+
+world

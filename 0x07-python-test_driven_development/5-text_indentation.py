@@ -9,22 +9,11 @@ def text_indentation(text):
     this function takes a text and re-formate it.
     Args: text(string)
     """
-
-    if not isinstance(text, str):
+    if type(text) is not str:
         raise TypeError("text must be a string")
-
-    punctuation_marks = ['.', '?', ':']
-    result = ""
-    line = ""
-
-    for char in text:
-        line += char
-
-        if char in punctuation_marks:
-            result += line.strip() + "\n\n"
-            line = ""
-
-    if line:
-        result += line.strip()
-
-    print(result)
+    for i in range(len(text)):
+        if text[i] == "." or text[i] == "?" or text[i] == ":":
+            print(text[i])
+            print()
+        else:
+            print(text[i], end="")

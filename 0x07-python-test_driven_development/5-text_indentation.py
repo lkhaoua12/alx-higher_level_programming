@@ -10,21 +10,21 @@ def text_indentation(text):
     Args: text(string)
     """
 
-    deli = [":", ":", "."]
-    line = ""
-    result = ""
-
     if not isinstance(text, str):
         raise TypeError("text must be a string")
+
+    punctuation_marks = ['.', '?', ':']
+    result = ""
+    line = ""
 
     for char in text:
         line += char
 
-        if char in deli:
-            result += line.stripe() + "\n\n"
+        if char in punctuation_marks:
+            result += line.strip() + "\n\n"
             line = ""
 
     if line:
-        result += line.stripe()
+        result += line.strip()
 
     print(result)

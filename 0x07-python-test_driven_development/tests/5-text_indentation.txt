@@ -10,3 +10,9 @@ test case: simple arge
 hello?
 <BLANKLINE>
 world
+
+test case: missing arg
+>>> text_identation()
+Traceback (most recent call last):
+   ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'

@@ -21,10 +21,10 @@ def text_indentation(text):
         line += char
 
         if char in deli:
-            result += line + "\n\n"
+            result += line.stripe() + "\n\n"
             line = ""
 
     if line:
-        result += line
+        result += line.stripe()
 
     print(result)

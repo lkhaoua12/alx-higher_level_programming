@@ -10,6 +10,5 @@ class BaseGeometry:
     of a_class
     """
 
-    def __init__(self):
-        def area(self):
-            raise Exception("area() is not implemented")
+    def area(self):
+        raise Exception("area() is not implemented")

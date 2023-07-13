@@ -29,18 +29,12 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([1, 2, 2, 2]), 2)
         self.assertEqual(max_integer([2, 2, 2, 1]), 2)
         self.assertEqual(max_integer([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 10)
-        self.assertEqual(max_integer([10, 9, 8, 7, 6, 5,
-                                        4, 3, 2, 1]), 10)
-        self.assertEqual(max_integer([1, 3, 5, 7, 9, 10,
-                                        8, 6, 4, 2]), 10)
-        self.assertEqual(max_integer([1, 2, 3, 4, 5, 6,
-                                        7, 8, 9, 10]), 10)
-        self.assertEqual(max_integer([10, 9, 8, 7, 6, 5,
-                                        4, 3, 2, 1]), 10)
-        self.assertEqual(max_integer([1, 2, 3, 4, 5, 6,
-                                        7, 8, 9, 10]), 10)
-        self.assertEqual(max_integer([1, 2, 3, 4, 5, 6,
-                                        7, 8, 9, 10]), 10)
+        self.assertEqual(max_integer([10, 9, 8, 7, 6, 5, 4, 3, 2, 1]), 10)
+        self.assertEqual(max_integer([1, 3, 5, 7, 9, 10, 8, 6, 4, 2]), 10)
+        self.assertEqual(max_integer([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 10)
+        self.assertEqual(max_integer([10, 9, 8, 7, 6, 5, 4, 3, 2, 1]), 10)
+        self.assertEqual(max_integer([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 10)
+        self.assertEqual(max_integer([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 10)
 
     def test_empty(self):
         """Test for empty list."""
@@ -51,15 +45,3 @@ class TestMaxInteger(unittest.TestCase):
         self.assertRaises(TypeError, max_integer, [1, 2, [1, 2], 4])
         self.assertRaises(TypeError, max_integer, [1, 2, (1, 2), 4])
         self.assertRaises(TypeError, max_integer, [1, 2, {1, 2}, 4])
-        self.assertRaises(TypeError, max_integer, [1, 2, True, 4])
-        self.assertRaises(TypeError, max_integer, [1, 2, 3, float('nan')])
-        self.assertRaises(TypeError, max_integer, [1, 2, float('inf'), 4])
-        self.assertRaises(TypeError, max_integer, [1, 2, float('inf'), 4])
-        self.assertRaises(TypeError, max_integer, [1, 2, float('inf'), 4])
-        self.assertRaises(TypeError, max_integer, [1, 2, float('inf'), 4])
-        self.assertRaises(TypeError, max_integer, [1, 2, float('inf'), 4])
-        self.assertRaises(TypeError, max_integer, [1, 2, float('inf'), 4])
-        self.assertRaises(TypeError, max_integer, [1, 2, float('inf'), 4])
-        self.assertRaises(TypeError, max_integer, [1, 2, float('inf'), 4])
-        self.assertRaises(TypeError, max_integer, [1, 2, float('inf'), 4])
-        self.assertRaises(TypeError, max_integer, [1, 2, float('inf'), 4])

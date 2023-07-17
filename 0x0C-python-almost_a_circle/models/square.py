@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """define the square class"""
 
+
 from .rectangle import Rectangle
+
 
 class Square(Rectangle):
     """Square class inherite from Rectangle"""
@@ -39,8 +41,3 @@ class Square(Rectangle):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-
-
-
-    
-

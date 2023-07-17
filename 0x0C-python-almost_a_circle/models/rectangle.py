@@ -1,8 +1,9 @@
-#/usr/bin/python3
+#!/usr/bin/python3
 """this module define the rectangle class"""
 
 
 from models.base import Base
+
 
 class Rectangle(Base):
     """class that define a rectangle"""
@@ -100,7 +101,8 @@ class Rectangle(Base):
     def __str__(self):
         """return represention of object"""
 
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} {self.__width}/{self.__height}"
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} " + \
+            f"{self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
         """update attribute of object"""

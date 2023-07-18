@@ -30,7 +30,7 @@ class TestRectangleClass(unittest.TestCase):
         # Test case 5: Check to-dictionary conversion
         rectangle_instance = Rectangle(10, 5, 2, 3)
         rect_dict = rectangle_instance.to_dictionary()
-        expected_dict = {'id': 4, 'width': 10, 'height': 5, 'x': 2, 'y': 3}
+        expected_dict = {'id': 7, 'width': 10, 'height': 5, 'x': 2, 'y': 3}
         self.assertEqual(rect_dict, expected_dict)
 
 

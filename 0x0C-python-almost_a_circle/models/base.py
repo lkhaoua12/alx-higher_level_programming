@@ -58,8 +58,10 @@ class Base():
 
     @staticmethod
     def from_json_string(json_string):
-        """get representaion from json string"""
-
+        if json_string is None or not json_string.strip():
+            return []
+        json_list = json.loads(json_string)
+        return [Base.create(**data) for data in json_list]
         if not json_string or json_string is None:
             return []
         return json.loads(json_string)

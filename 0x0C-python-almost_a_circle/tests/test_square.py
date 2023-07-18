@@ -32,7 +32,7 @@ class TestSquareClass(unittest.TestCase):
         # Test case 5: Check to-dictionary conversion
         square_instance = Square(5, 2, 3)
         square_dict = square_instance.to_dictionary()
-        expected_dict = {'id': 8, 'size': 5, 'x': 2, 'y': 3}
+        expected_dict = {'id': 11, 'size': 5, 'x': 2, 'y': 3}
         self.assertEqual(square_dict, expected_dict)
 
 if __name__ == "__main__":

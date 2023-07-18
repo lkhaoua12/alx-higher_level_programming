@@ -92,8 +92,8 @@ class Base():
 
         t = turtle.Turtle()
         t.color("beige")
-        turtle.bgcolor("violet")
-        t.shape("square")
+        turtle.bgcolor("blue")
+        t.shape("circle")
         t.pensize(8)
 
         for i in (list_rectangles + list_squares):
@@ -102,14 +102,12 @@ class Base():
             turtle.Screen().colormode(255)
             t.pencolor((randrange(255), randrange(255), randrange(255)))
             Base.draw_rect(t, i)
-            time.sleep(1)
-        time.sleep(5)
+            time.sleep(3)
+        time.sleep(10)
 
     @staticmethod
     def draw_rect(t, rect):
-        """Helper method that draws a Rectangle
-        or Square.
-        """
+        """method that draws a Rectangle or Square"""
 
         t.penup()
         t.setpos(rect.x, rect.y)

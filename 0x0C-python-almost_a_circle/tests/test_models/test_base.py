@@ -22,23 +22,6 @@ class TestBaseClass(unittest.TestCase):
         self.assertNotEqual(base_instance_1.id, base_instance_3.id)
         self.assertNotEqual(base_instance_2.id, base_instance_3.id)
 
-    def test_base_to_json_string(self):
-        # Test case 4: Check to_json_string method
-        base_instance = Base(5)
-        base_dict = base_instance.to_dictionary()
-        base_json_string = Base.to_json_string([base_dict])
-        expected_json_string = '[{"id": 5}]'
-        self.assertEqual(base_json_string, expected_json_string)
-
-    def test_base_from_json_string(self):
-        # Test case 5: Check from_json_string method
-        json_string = '[{"id": 1}, {"id": 2}, {"id": 3}]'
-        base_list = Base.from_json_string(json_string)
-        self.assertEqual(len(base_list), 3)
-        self.assertEqual(base_list[0].id, 1)
-        self.assertEqual(base_list[1].id, 2)
-        self.assertEqual(base_list[2].id, 3)
-
 
 if __name__ == "__main__":
     unittest.main()

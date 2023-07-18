@@ -117,6 +117,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Return a dictionary representation of the Rectangle."""
+
         Dictionary = {}
         for x, y in vars(self).items():
             Dictionary[x.split("__")[-1]] = y

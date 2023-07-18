@@ -55,3 +55,11 @@ class Base():
         insc = cls(1, 1) if cls.__name__ == "Rectangle" else cls(1)
         insc.update(**dictionary)
         return insc
+
+    @staticmethod
+    def from_json_string(json_string):
+        """get representaion from json string"""
+
+        if not json_string or json_string is None:
+            return []
+        return json.loads(json_string)

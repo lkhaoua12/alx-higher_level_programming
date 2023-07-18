@@ -52,6 +52,6 @@ class Base():
     def create(cls, **dictionary):
         """create a new instance from kwargs"""
 
-        insc = cls(1,1) if cls.__name__ == "Rectangle" else cls(1)
+        insc = cls(1, 1) if cls.__name__ == "Rectangle" else cls(1)
         insc.update(**dictionary)
         return insc

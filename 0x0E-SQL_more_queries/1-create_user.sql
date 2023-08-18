@@ -1,5 +1,5 @@
--- 1-create_user.sql
--- creat new user with password
-CREATE IF NOT EXISTS USER 'user_0d_1'@'localhost';
+-- 0x0E. SQL - More queries, task 1. Root user
+-- Creates user `user_0d_1`, sets pwd, and grants all privileges.
+CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost';
 SET PASSWORD FOR 'user_0d_1'@'localhost' = 'user_0d_1_pwd';
-GRANT ALL PRIVILIGES ON *.* TO 'user_0d_1'@'localhost';
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';

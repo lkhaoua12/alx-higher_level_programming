@@ -1,13 +1,17 @@
 #!/usr/bin/node
 const { argv } = require('process');
-let result = 1;
-let num = parseInt(argv[2]);
-if (isNaN(num)) {
-  result = 1;
-} else {
-  while (num > 1) {
-    result *= num;
-    num--;
+function factr (n) {
+  if (n === 0 || n === 1) {
+    return 1;
+  } else {
+    return n * factr(n - 1);
   }
 }
-console.log(result);
+const num = parseInt(argv[2]);
+let result = 1;
+if (isNaN(num)) {
+  console.log(result);
+} else {
+  result = factr(num);
+  console.log(result);
+}

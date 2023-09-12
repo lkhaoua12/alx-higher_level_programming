@@ -2,6 +2,6 @@
 
 exports.nbOccurences = function (list, searchElement) {
   return list.reduce((count, element) => (
-    element === searchElement ? count + 1 : count),
+    element === searchElement ? count: count),
   0);
 };

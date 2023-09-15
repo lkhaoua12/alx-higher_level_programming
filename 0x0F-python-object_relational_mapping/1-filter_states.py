@@ -22,7 +22,7 @@ if __name__ == "__main__":
     )
 
     cur = db.cursor()
-    cur.execute("select * from states where name like 'N%' order by id ASC")
+    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
     result = cur.fetchall()
 
     for row in result:

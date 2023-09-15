@@ -28,22 +28,13 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # Execute the SQL query to select data from cities and states tables.
-    cur.execute('select states.id from states where name = %s', (state_name,))
-    state_row = cur.fetchone()
+    cur.execute("SELECT cities.name FROM cities\
+            JOIN states ON cities.state_id = states.id WHERE states.name = %s\
+                ORDER BY cities.id", (state_name,))
 
-    if state_row:
-        state_id = state_row[0]
-
-        # Execute the SQL query to select cities in the specified state.
-        cur.execute('SELECT name FROM cities WHERE state_id = %s', (state_id,))
-
-        # Fetch all the rows from the result set.
-        result = cur.fetchall()
-
-        # Print the retrieved data.
-        city_list = [row[0] for row in result]
-        city_names = (', ').join(city_list)
-        print(city_names)
+    cities_list = cur.fetchall()
+    cities = [city[0] for city in cities_list]
+    print(', '.join(cities))
 
     # Closing the conection
     cur.close()

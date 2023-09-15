@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-import MySQLdb
-import sys
-
 """
     This script connects to a MySQL database and retrieves
     data from the 'cities' and 'states' tables.
     It then prints the retrieved data.
 """
+
+import MySQLdb
+import sys
 
 if __name__ == "__main__":
     # Get command-line arguments for username, password, and dbname.

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""models the city table """
+"""models the city table the model for the cities table"""
 
 import sqlalchemy
 import sys

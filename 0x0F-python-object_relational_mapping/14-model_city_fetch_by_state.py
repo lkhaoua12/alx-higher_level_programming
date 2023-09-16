@@ -23,9 +23,9 @@ if __name__ == "__main__":
     session = Session(engine)
 
     # Querying and fetching City objects sorted by cities.id.
-    city_state_info = session.query(State.name, City.id, City.name)\
-                             .join(City)\
-                             .order_by(City.id).all()
+    city_state_info = session.query(State.name, City.id, City.name).join(
+        City, State.id == City.state_id
+    ).order_by(City.id).all()
 
     # Displaying the results.
     for state_name, city_id, city_name in city_state_info:

@@ -22,7 +22,7 @@ if __name__ == "__main__":
     session = Session(engine)
 
     # fetching the state to update it name
-    state_update = session.query(State).filter(State.id == 2)
+    state_update = session.query(State).filter(State.id == 2).first()
     if state_update:
         state_update.name = 'New Mexico'
 

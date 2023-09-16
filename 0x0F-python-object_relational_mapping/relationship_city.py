@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-"""models the city table the model for the cities table"""
+"""Models the city table."""
 
 import sqlalchemy
 import sys
 from relationship_state import Base, State
 from sqlalchemy import Column, Integer, String, ForeignKey
-
 
 # creating the City class.
 class City(Base):

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the State class."""
+"""Defines the State class a model for the states table."""
 
 import sqlalchemy
 from sqlalchemy import Column, String, Integer

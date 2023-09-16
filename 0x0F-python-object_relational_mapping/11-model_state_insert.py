@@ -23,11 +23,11 @@ if __name__ == "__main__":
 
     # create a new state and inserting it to the db
     new_state = State(name='Louisiana')
-    print(new_state.id)
     session.add(new_state)
 
     # commit the update to the db
     session.commit()
+    print(new_state.id)
 
     # closing the session
     session.close()

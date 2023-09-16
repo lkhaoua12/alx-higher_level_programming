@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""join cities on states by states id"""
+"""Join cities on states by state's id"""
 
 import sqlalchemy
 import sys
@@ -9,7 +9,7 @@ from model_state import Base, State
 from model_city import City
 
 if __name__ == "__main__":
-    # Setting the conection argument.
+    # Setting the connection arguments.
     user = sys.argv[1]
     passwd = sys.argv[2]
     db = sys.argv[3]

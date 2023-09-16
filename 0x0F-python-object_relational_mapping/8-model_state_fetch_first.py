@@ -1,30 +1,30 @@
 #!/usr/bin/python3
-"""Lists all State objects from the database hbtn_0e_6_usa"""
+"""fetch the first object of the state clss"""
 
-import sqlalchemy
 import sys
+import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from model_state import Base, State
 
 if __name__ == "__main__":
-    # getting the argument to pass to the engine
+    # getting the connection arg
     user = sys.argv[1]
     passwd = sys.argv[2]
     db = sys.argv[3]
 
-    # setting the connection to mysql
-    url_s = f'mysql://{user}:{passwd}@localhost:3306/{db}'
-    engine = create_engine(url_s)
+    # setting the connection to the msql_server
+    url = f'mysql://{user}:{passwd}@localhost:3306/{db}'
+    engine = create_engine(url)
 
-    # starting a session to interacte with th db
+    # creating a session to interacete with the db.
     Base.metadata.create_all(engine)
     session = Session(engine)
 
-    # fetching the required data.
+    # fetching the data.
     state = session.query(State).order_by(State.id).first()
 
-    # print the state name
+    # print the data
     print(f'{state.id}: {state.name}')
 
     # closing the session

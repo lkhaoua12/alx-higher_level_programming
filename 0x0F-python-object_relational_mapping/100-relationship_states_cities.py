@@ -1,36 +1,42 @@
 #!/usr/bin/python3
-"""Create new tables and link them."""
+"""
+Script that creates the State "California" with the City "San Francisco"
+from the database hbtn_0e_100_usa.
+"""
 
 import sys
-from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
 from relationship_state import Base, State
 from relationship_city import City
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
 
 if __name__ == "__main__":
-    # Getting connection parameters.
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
+    mysql_username = sys.argv[1]
+    mysql_password = sys.argv[2]
+    database_name = sys.argv[3]
 
-    # Setting up the connection to the MySQL server.
-    url = f'mysql://{username}:{password}@localhost:3306/{db_name}'
-    engine = create_engine(url)
+    # Create a connection to the database
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+        mysql_username, mysql_password, database_name))
 
-    # Setting up the session to interacte with the db
+    # Create all tables in the database
     Base.metadata.create_all(engine)
+
+    # Create a session
     session = Session(engine)
 
-    # Creating the new State object for California.
+    # Create California state
     california = State(name="California")
 
-    # Creating a new City object for San Francisco.
-    san_francisco = City(name="San Francisco")
-    california.cities.append(san_francisco)
+    # Create San Francisco city
+    san_francisco = City(name="San Francisco", state=california)
 
-    # Adding California to the session and committing the changes.
+    # Add the state and city to the session
     session.add(california)
+    session.add(san_francisco)
+
+    # Commit the changes
     session.commit()
 
-    # Closing the session.
+    # Close the session
     session.close()

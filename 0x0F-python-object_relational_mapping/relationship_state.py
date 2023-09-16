@@ -4,7 +4,7 @@
 import sqlalchemy
 from sqlalchemy import Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
-
+from sqlalchemy.orm import relationship
 
 # new inctance of the declarative_base class.
 Base = declarative_base()

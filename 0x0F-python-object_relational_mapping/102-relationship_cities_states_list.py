@@ -22,7 +22,7 @@ if __name__ == "__main__":
     session = Session(engine)
 
     # Fetching the cities object
-    cities = session.query(City).order_by(City.id)
+    cities = session.query(City).order_by(City.id).all()
 
     # Displaying the data.
     for city in cities:

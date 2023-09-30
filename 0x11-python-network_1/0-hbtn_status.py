@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" module doc """
+""" get request and content display """
 import urllib.request
 
 

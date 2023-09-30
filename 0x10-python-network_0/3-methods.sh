@@ -1,3 +1,3 @@
 #!/bin/bash
 # check allowed methods.
-curl -sI  "$1" | sed -n '/Allow: /s/Allow: //p'
+curl -sI  "$1" | grep -i '^Allow:' | cut -d ' ' -f 2-

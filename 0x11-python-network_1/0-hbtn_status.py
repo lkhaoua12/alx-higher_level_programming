@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ make a get request and diplay content"""
 
 import urllib.request

@@ -11,7 +11,9 @@ if __name__ == "__main__":
         utf_data = data.decode('utf-8')
         type_data = type(data)
 
-        print("Body response:")
-        print(f"\t- type: {type}")
-        print(f"\t- content: {data}")
-        print(f"\t- utf8 content: {utf_data}")
+        print(f"Body response:\n\t- type: {type}\n\t\
+- content: {data}\n\t- utf8 content: {utf_data}")
+        # print("Body response:")
+        # print(f"\t- type: {type}")
+        # print(f"\t- content: {data}")
+        # print(f"\t- utf8 content: {utf_data}")

@@ -1,19 +1,13 @@
 #!/usr/bin/python3
-""" make a get request and diplay content"""
-
+""" module doc """
 import urllib.request
+
 
 if __name__ == "__main__":
     url = "https://alx-intranet.hbtn.io/status"
-
     with urllib.request.urlopen(url) as response:
         data = response.read()
         utf_data = data.decode('utf-8')
-        type_data = type(data)
-
-        print(f"Body response:\n\t- type: {type}\n\t\
+        resType = type(data)
+        print(f"Body response:\n\t- type: {resType}\n\t\
 - content: {data}\n\t- utf8 content: {utf_data}")
-        # print("Body response:")
-        # print(f"\t- type: {type}")
-        # print(f"\t- content: {data}")
-        # print(f"\t- utf8 content: {utf_data}")

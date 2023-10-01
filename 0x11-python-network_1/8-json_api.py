@@ -9,7 +9,7 @@ if __name__ == "__main__":
     argp = sys.argv[2]
 
     try:
-        req = requests.post(url, data=argp)
+        req = requests.post(url, data={"q": argp})
         req_json = req.json()
         if req_json == {}:
             print('No result')

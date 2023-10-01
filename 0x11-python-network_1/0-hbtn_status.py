@@ -1,16 +1,15 @@
 #!/usr/bin/python3
-""" get request and content display """
+""" fetch url and display status """
+
 import urllib.request
 
-
 if __name__ == "__main__":
-    url = "https://alx-intranet.hbtn.io/status"
+    url = 'https://alx-intranet.hbtn.io/status'
+
+    # fetching data
     with urllib.request.urlopen(url) as response:
         data = response.read()
-        utf_data = data.decode('utf-8')
-        c_type = type(data)
-
-        print("Body response:")
-        print(f"\t- type: {c_type}")
-        print(f"\t- content: {data}")
-        print(f"\t- utf8 content: {utf_data}")
+        print('Body response:')
+        print(f'\t- type: {type(data)}')
+        print(f'\t- content: {data}')
+        print(f'\t- utf8 content: {data.decode("utf-8")}')

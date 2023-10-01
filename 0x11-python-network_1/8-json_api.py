@@ -1,19 +1,21 @@
 #!/usr/bin/python3
-""" fetch data with key=value """
+""" fetch data from api with post requests """
 
 import requests
 import sys
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     url = 'http://0.0.0.0:5000/search_user'
-    argp = sys.argv[2]
+    par = {'q': ""}
+    if len(sys.argv) > 1:
+        par['q'] = sys.argv[1]
 
     try:
-        req = requests.post(url, data={"q": argp})
-        req_json = req.json()
-        if req_json == {}:
+        res = requests.post(url, data=par)
+        r = res.json()
+        if r == {}:
             print('No result')
         else:
-            print(f'[{req_json.get("id")}] {req_json.get("name")}')
+            print(f"[{r.get('id')}] {r.get('name')}")
     except ValueError:
-        print('No result')
+        print('Not a valid JSON')

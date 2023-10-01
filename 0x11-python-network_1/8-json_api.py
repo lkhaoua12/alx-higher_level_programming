@@ -6,16 +6,17 @@ import sys
 
 if __name__ == '__main__':
     url = 'http://0.0.0.0:5000/search_user'
-    par = {'q': ""}
-    if len(sys.argv) > 1:
-        par['q'] = sys.argv[1]
+    if len(sys.argv[1]) > 1:
+        par = sys.argv[1]
+    else:
+        par = ""
 
     try:
-        res = requests.post(url, data=par)
-        r = res.json()
-        if r == {}:
+        req = requests.post(url, data={'q': par})
+        res = req.json()
+        if res == {}:
             print('No result')
         else:
-            print(f"[{r.get('id')}] {r.get('name')}")
+            print(f"[{res.get('id')}] {res.get('name')}")
     except ValueError:
         print('Not a valid JSON')

@@ -1,22 +1,32 @@
 #!/usr/bin/python3
-""" fetch data from api with post requests """
+""" fetch data from api with post request """
 
 import requests
 import sys
 
-if __name__ == '__main__':
-    url = 'http://0.0.0.0:5000/search_user'
-    if len(sys.argv[1]) > 1:
-        par = sys.argv[1]
+if __name__ == "__main__":
+    # Define the URL
+    url = "http://0.0.0.0:5000/search_user"
+
+    # Set the default value for the 'q'.
+    if len(sys.argv) > 1:
+        letter = sys.argv[1]
     else:
-        par = ""
+        letter = ""
+
+    # Send the POST request with the 'q' parameter
+    response = requests.post(url, data={'q': letter})
 
     try:
-        req = requests.post(url, data={'q': par})
-        res = req.json()
-        if res == {}:
-            print('No result')
+        # Try to parse the response JSON
+        result = response.json()
+
+        if result:
+            # If JSON is valid and not empty, display id and name
+            print("[{}] {}".format(result.get('id'), result.get('name')))
         else:
-            print(f"[{res.get('id')}] {res.get('name')}")
+            # If JSON is empty, display 'No result'
+            print("No result")
     except ValueError:
-        print('Not a valid JSON')
+        # If JSON is invalid, display 'Not a valid JSON'
+        print("Not a valid JSON")

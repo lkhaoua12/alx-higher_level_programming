@@ -25,5 +25,4 @@ if __name__ == "__main__":
     user = sys.argv[1]
     passtoken = sys.argv[2]
     result = fetch_user_id(user, passtoken)
-    if result is not None:
-        print(result)
+    print(result)

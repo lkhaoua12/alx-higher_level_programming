@@ -1,32 +1,15 @@
 #!/usr/bin/node
 /**
-  prints number of movies where the character 'Wedge Antilles' is present.
-  usage: ./4-starwars_count.js <API URL>
-  */
+  prints the title of a Star Wars movie
+  where the episode number matches a given integer
+  usage: ./3-starwars_title.js id
+ */
 const myArgs = process.argv.slice(2);
 const request = require('request');
-const characters_ = [];
-request(myArgs[0], function (error, response, body) {
-  if (error) {
-    console.log(error);
-  }
+const url = 'https://swapi-api.hbtn.io/api/films/' + myArgs[0];
+request(url, function (error, response, body) {
   if (!error) {
-    let i = 0;
     const json_ = JSON.parse(body);
-
-    for (i = 0; i < 7; i++) {
-      characters_.push(json_.results[i].characters);
-    }
+    console.log(json_.title);
   }
-  let counter = 0;
-  characters_.forEach(function each (item) {
-    if (Array.isArray(item)) {
-      item.forEach(each);
-    } else {
-      if (item === 'https://swapi-api.hbtn.io/api/people/18/') {
-        counter++;
-      }
-    }
-  });
-  console.log(counter);
 });
